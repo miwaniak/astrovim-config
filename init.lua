@@ -69,6 +69,9 @@ local config = {
           require("core.utils").add_cmp_source("copilot", 900)
         end
       },
+      {
+        "TimUntersberger/neogit"
+      },
     },
     -- All other entries override the setup() call for default plugins
     treesitter = {

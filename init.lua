@@ -1,7 +1,7 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "default_theme",
+  colorscheme = "nord",
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
@@ -51,6 +51,24 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
+      -- Nord theme for vim
+      {
+        "arcticicestudio/nord-vim"
+      },
+      {
+        "zbirenbaum/copilot.lua",
+        event = "InsertEnter",
+        config = function ()
+          vim.schedule(function() require("copilot").setup() end)
+        end,
+      },
+      {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua", "nvim-cmp" },
+        config = function ()
+          require("core.utils").add_cmp_source("copilot", 900)
+        end
+      },
     },
     -- All other entries override the setup() call for default plugins
     treesitter = {
@@ -63,7 +81,6 @@ local config = {
       compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
     },
   },
-
   -- LuaSnip Options
   luasnip = {
     -- Add paths for including more VS Code style snippets in luasnip

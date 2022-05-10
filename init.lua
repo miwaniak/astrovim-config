@@ -190,6 +190,7 @@ local config = {
       debug = false,
       sources = {
         -- Set a formatter
+        formatting.stylua,
         formatting.rufo,
         -- Set a linter
         diagnostics.rubocop,

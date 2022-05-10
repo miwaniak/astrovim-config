@@ -214,6 +214,10 @@ local config = {
   polish = function()
     -- Set key bindings
     vim.keymap.set("n", "<C-s>", ":w!<CR>")
+    vim.keymap.del("n", "<leader>gs")
+    vim.keymap.del("n", "<leader>gt")
+    vim.keymap.del("n", "<leader>gg")
+    vim.keymap.set("n", "<leader>gs", ":Neogit<cr>", {desc = "Git status"})
 
     -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })

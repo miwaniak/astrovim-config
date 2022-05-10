@@ -72,6 +72,13 @@ local config = {
       {
         "TimUntersberger/neogit"
       },
+      {
+         'phaazon/hop.nvim',
+         branch = 'v1', -- optional but strongly recommende
+         config = function()
+           require'hop'.setup {keys = 'asdfghjklqwertyuiop'}
+         end
+      },
     },
     -- All other entries override the setup() call for default plugins
     treesitter = {

@@ -79,6 +79,9 @@ local config = {
            require'hop'.setup {keys = 'asdfghjklqwertyuiop'}
          end
       },
+      {
+        'wakatime/vim-wakatime'
+      },
     },
     -- All other entries override the setup() call for default plugins
     treesitter = {
@@ -117,8 +120,8 @@ local config = {
   },
 
   -- CMP Source Priorities
-  -- modify here the priorities of default cmp sources
-  -- higher value == higher priority
+  -- modify here the priorities of default cmp sources higher value == higher
+  -- priority
   -- The value can also be set to a boolean for disabling default sources:
   -- false == disabled
   -- true == 1000
